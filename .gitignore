@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local log files and generated reports
+*.log
+log_analysis_report.md
+
+# PyCharm configuration files
+.idea/
