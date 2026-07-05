@@ -1,6 +1,0 @@
-{
-  "name": "Duplicate File Finder",
-  "description": "An interactive simulator, code generator, and computer science educational companion for a Python-based duplicate file finder and storage analyzer CLI tool.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

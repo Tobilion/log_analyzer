@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Log Analyzer — Security Log Analysis CLI + Interactive Web Companion
 
-# Run and deploy your AI Studio app
+Two parts, one project:
 
-This contains everything you need to run your app locally.
+1. **`python/log_analyzer/`** — the core tool: a zero-dependency Python CLI that parses raw server logs (Common/Combined formats), aggregates traffic metrics with stream buffering, and flags security threats — SQL injection patterns, path traversal, and SSH/auth brute-force attempts. Full details in [its README](python/log_analyzer/README.md).
+2. **Web companion (this folder)** — a React + TypeScript site that demonstrates the CLI interactively in the browser: simulated terminal runs, a log-analysis and file-finder simulator, and a CS-theory section explaining the underlying concepts (hashing, streaming IO, complexity).
 
-View your app in AI Studio: https://ai.studio/apps/d926e70d-03e5-4d04-9c14-676f97e1e86b
+## Run the Python CLI
 
-## Run Locally
+Requires Python 3.9+ — no packages to install:
 
-**Prerequisites:**  Node.js
+```bash
+cd python/log_analyzer
+python main.py test_server.log
+```
 
+The analysis report is written as markdown (see `log_analysis_report.md` for a sample run).
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Run the web companion
+
+Requires Node.js 18+:
+
+```bash
+npm install
+npm run dev
+```
+
+Open **http://localhost:3000**. `npm run build` produces a static `dist/` deployable to Netlify, Vercel, or GitHub Pages (no backend or env vars needed).
+
+## Structure
+
+```
+python/log_analyzer/   main.py, parser.py, analyzer.py, reporter.py, generator.py
+src/                   React app: simulators, terminal previews, CS theory section
+```

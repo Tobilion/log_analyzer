@@ -15,3 +15,7 @@ log_analysis_report.md
 
 # PyCharm configuration files
 .idea/
+# Node (web companion)
+node_modules/
+dist/
+.env
