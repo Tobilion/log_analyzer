@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { NameReveal } from './components/ui/site-footer';
 import { 
   Play, 
   Settings2, 
@@ -356,8 +357,8 @@ export default function App() {
       {/* Footer copyright */}
       <footer className="border-t border-slate-200 bg-white py-6 mt-16 select-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>
-            Portfolio Bundle Edition • Supporting Student Technical Portfolios
+          <p className="flex items-center gap-2">
+            Built by <NameReveal />
           </p>
           <p className="font-mono">
             MIT License • Standard Library Code Assets
